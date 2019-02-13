@@ -6,7 +6,7 @@ import android.view.animation.Transformation;
 
 /**
 * 천천히 사라지는 애니메이션
-* @author 임성진(sjlim)
+* @author 임성진(sjlim/costnc)
 * @version 1.0.0
 * @since 2019-02-13 오후 7:48
 **/

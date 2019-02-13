@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
 * HOT SUB 뷰 어뎁터
-* @author GS ITM 임성진
+* @author 임성진(sjlim/costnc)
 * @version 1.0.0
 * @since 2019-02-13 오전 9:29
 **/
@@ -19,7 +19,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * 생성자 (파라미터 뷰 리스트)
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:27
     **/
@@ -29,7 +29,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * 생성자 (파라미터 없음)
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:31
     **/
@@ -39,7 +39,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * 뷰 정보 개수 반환
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:27
     **/
@@ -51,7 +51,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * SUB 뷰에 맞게 뷰 홀더를 만든다.
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:26
     **/
@@ -64,7 +64,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * 뷰 타입에 맞게 레이아웃 설정
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:26
     **/
@@ -91,7 +91,7 @@ public class StretchingViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     /**
     * 뷰 정보를 추가한다.
-    * @author GS ITM 임성진
+    * @author 임성진(sjlim/costnc)
     * @version 1.0.0
     * @since 2019-02-13 오전 9:30
     **/
