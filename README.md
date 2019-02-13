@@ -25,5 +25,6 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.costnc:StretchingToTopRecylcerView:0.1'
+	        api 'com.github.costnc:StretchingToTopRecylcerView:0.1'
+		api 'com.android.support:recyclerview-v7:28.0.0'
 	}
