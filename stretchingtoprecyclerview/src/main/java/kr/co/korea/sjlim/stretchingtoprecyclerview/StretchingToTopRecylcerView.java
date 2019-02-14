@@ -27,6 +27,7 @@ public class StretchingToTopRecylcerView extends RecyclerView {
     private int currentScrollY = 0;                                      // 현재 스크롤 Y 값
     private int initTopViewHeight = 0;                                  // 초기 상단 뷰 높이
     private float beforeTouchY = 0;                                     // 이전 화면 터치한 Y 값
+    private boolean isPressed = false;                                  // 누름 여부
 
     private View vStretchingTopView = null; // 늘릴 최상위 뷰
 
@@ -125,40 +126,47 @@ public class StretchingToTopRecylcerView extends RecyclerView {
                                     childVIew.setScaleY(childVIew.getScaleY() + (float) 0.01);
                                 }
 
+                                this.isPressed = true;
+
                                 break;
 
                             // 손을 놓았을때, 뷰를 원위치 시킨다.
                             case MotionEvent.ACTION_UP:
 
-                                // 높이를 애니멩션 효과를 주어, 원위치 시킨다.
-                                Animation heightAnim = new ShowAnim(this.vStretchingTopView, initTopViewHeight);
-                                heightAnim.setDuration(200);
-                                heightAnim.setAnimationListener(new Animation.AnimationListener() {
-                                    @Override
-                                    public void onAnimationStart(Animation animation) {
+                                if (this.isPressed) {
 
-                                    }
+                                    // 높이를 애니멩션 효과를 주어, 원위치 시킨다.
+                                    Animation heightAnim = new ShowAnim(this.vStretchingTopView, initTopViewHeight);
+                                    heightAnim.setDuration(200);
+                                    heightAnim.setAnimationListener(new Animation.AnimationListener() {
+                                        @Override
+                                        public void onAnimationStart(Animation animation) {
 
-                                    @Override
-                                    public void onAnimationEnd(Animation animation) {
-                                        beforeTouchY = 0;
-                                        initTopViewHeight = 0;
-                                    }
+                                        }
 
-                                    @Override
-                                    public void onAnimationRepeat(Animation animation) {
+                                        @Override
+                                        public void onAnimationEnd(Animation animation) {
+                                            beforeTouchY = 0;
+                                            initTopViewHeight = 0;
+                                            isPressed = false;
+                                        }
 
-                                    }
-                                });
+                                        @Override
+                                        public void onAnimationRepeat(Animation animation) {
 
-                                // 애니메이션 시작
-                                this.vStretchingTopView.startAnimation(heightAnim);
+                                        }
+                                    });
 
-                                // 자식 뷰의 스케일을 원위치 시킨다.
-                                ViewGroup vgView = (ViewGroup) this.vStretchingTopView;
-                                View childVIew = vgView.getChildAt(0);
-                                childVIew.animate().scaleX(1);
-                                childVIew.animate().scaleY(1);
+                                    // 애니메이션 시작
+                                    this.vStretchingTopView.startAnimation(heightAnim);
+
+                                    // 자식 뷰의 스케일을 원위치 시킨다.
+                                    ViewGroup vgView = (ViewGroup) this.vStretchingTopView;
+                                    View childVIew = vgView.getChildAt(0);
+                                    childVIew.animate().scaleX(1);
+                                    childVIew.animate().scaleY(1);
+
+                                }
 
                                 break;
                             default:
